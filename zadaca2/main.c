@@ -1,21 +1,18 @@
 #include <stdio.h>
-//#include <cmath>
+#include <stdint.h>
 
-
-float bar(float f1, float f2, double d1) ;
+double mymax(double start, const double* nums, uint32_t size); 
 /* { */
-/*   if (f1 < f2) */
-/*     return 2.f * ceil(f1) - round(f2) + trunc(d1); */
-/*   else if (f1 == f2) { */
-/*     return ceil(f1) - floor(f2) + trunc(d1); */
-/*   } */
-/*   return d1; */
+/* for (int i = 0; i < size; ++i) { */
+/* if (nums[i] > start) */
+/* start = nums[i]; */
+/* } */
+/* return start; */
 /* } */
 
 
-int main(void)
-{
- float rez= bar(5.5,8.5,3.2);
- printf("%f\n", rez); 
- return 0;
+int main(int argc, char const* argv[]) {
+const double nums[] = {1., 5.7, 9.4, 14.8, 7.1, 8.2, 10.5};
+printf("MyMax: %f\n", mymax(nums[0], nums, 7));
+return 0;
 }
